@@ -18,7 +18,8 @@ class ProductAction extends Action
 			)
 		);
 
-		var_dump($products);
+		// echo json_encode($products);
+		$this->ajaxReturn($products, 'JSON');
 	}
 
 	public function show()
