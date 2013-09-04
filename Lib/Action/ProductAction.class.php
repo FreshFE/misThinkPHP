@@ -5,21 +5,11 @@ class ProductAction extends Action
 	public function index()
 	{
 		// 模拟数据库数据
-		$products = array(
-			array(
-				"id" => 1,
-				"name" => "Google",
-				"country" => "USA"
-			),
-			array(
-				"id" => 2,
-				"name" => "华为",
-				"country" => "RPC"
-			)
-		);
+		$product = M('Product');
+		$datas = $product->select();
 
 		// echo json_encode($products);
-		$this->ajaxReturn($products, 'JSON');
+		$this->ajaxReturn($datas, 'JSON');
 	}
 
 	public function show()
