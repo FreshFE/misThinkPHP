@@ -10,10 +10,10 @@ class ProductAction extends Action
 		$this->ajaxReturn($datas, 'JSON');
 	}
 
-	public function show()
+	public function show($id)
 	{
 		$product = M('Product');
-		$datas = $product->find(1);
+		$datas = $product->find($id);
 
 		$this->ajaxReturn($datas, 'JSON');
 	}
