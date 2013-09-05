@@ -2,6 +2,9 @@
 
 class ProductAction extends Action
 {
+	/**
+	 * 列出所有的产品
+	 */
 	public function index()
 	{
 		$product = M('Product');
@@ -10,6 +13,11 @@ class ProductAction extends Action
 		$this->ajaxReturn($datas, 'JSON');
 	}
 
+	/**
+	 * 列出指定id的产品
+	 *
+	 * @param $id 传入的query值
+	 */
 	public function show($id)
 	{
 		$product = M('Product');
@@ -18,9 +26,13 @@ class ProductAction extends Action
 		$this->ajaxReturn($datas, 'JSON');
 	}
 
+	/**
+	 * 创建一个新的产品
+	 * 必须使用POST方法提交请求
+	 */
 	public function create()
 	{
-		// 判断是否post
+		// 判断是否为POST请求
 		if ($this->isPost()) {
 
 			$product = M('Product');
@@ -35,9 +47,13 @@ class ProductAction extends Action
 		}
 	}
 
+	/**
+	 * 编辑一个指定id的产品
+	 * 必须使用POST方法提交请求
+	 */
 	public function edit()
 	{
-		// 自己写一个
+		// 判断是否为POST请求
 		if ($this->isPost()) {
 
 			$product = M('Product');
@@ -52,6 +68,11 @@ class ProductAction extends Action
 		}
 	}
 
+	/**
+	 * 删除一个指定id的产品
+	 *
+	 * @param $id 传入的query值
+	 */
 	public function remove($id)
 	{
 		$product = M('Product');
@@ -64,14 +85,3 @@ class ProductAction extends Action
 		}
 	}
 }
- 
-
-
-
-
-
-
-
-
-
-
